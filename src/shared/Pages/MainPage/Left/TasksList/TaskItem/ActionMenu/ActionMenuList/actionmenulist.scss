@@ -1,0 +1,30 @@
+.listWrapper {
+  position: absolute;
+  max-width: 165px;
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--gray-border);
+  padding: 6px 0;
+  z-index: 1;
+  &:after,
+  &:before {
+    content: "";
+    border: solid transparent;
+    position: absolute;
+    left: calc(50% - 10px);
+    bottom: 100%;
+  }
+  &:after {
+    border-bottom-color: var(--white);
+    border-width: 8px;
+  }
+  &:before {
+    border-bottom-color: var(--gray-border);
+    border-width: 9px;
+    margin-left: -1px;
+  }
+}
+
+.item {
+  width: 100%;
+}

@@ -1,0 +1,67 @@
+import React from 'react';
+import styles from './actionmenulist.scss';
+import {useDropdownPosition} from "../../../../../../../hooks/useDropdownPosition";
+import {useCloseDropdown} from "../../../../../../../hooks/useCloseDropdown";
+import ReactDOM from "react-dom";
+import {EIcon} from "../../../../../../../Icon";
+import {ActionBtn} from "../ActionBtn";
+import {openModal} from "../../../../../../../../store/actionMenuListStore";
+import {decreasePomodoroItem, increasePomodoroItem, updateItemTask} from "../../../../../../../../store/listTaskStore";
+
+interface IActionMenuList {
+  id: number,
+  buttonRef: React.RefObject<HTMLButtonElement>,
+  onClose?: () => void,
+}
+
+export function ActionMenuList({buttonRef, onClose, id}: IActionMenuList) {
+  const [dropdownPosition] = useDropdownPosition({buttonRef})
+  const node = document.querySelector('#dropdown_root')
+  const ref = useCloseDropdown({onClose})
+  if (!node) return null
+
+  function openModalClick() {
+      openModal(id)
+  }
+  function increaseItem(event: React.MouseEvent<HTMLButtonElement>) {
+      event.stopPropagation()
+      increasePomodoroItem(id)
+  }
+
+  function decreaseItem(event: React.MouseEvent<HTMLButtonElement>) {
+      event.stopPropagation()
+      decreasePomodoroItem(id)
+  }
+
+  return ReactDOM.createPortal((
+    <div style={{
+            top: dropdownPosition.top,
+            left: dropdownPosition.left - 68
+          }}
+         ref={ref}
+         className={styles.listWrapper}
+    >
+        <ul className={'list-reset'}>
+            <li className={styles.item} >
+                <ActionBtn text={'Увеличить'}
+                           onClick={increaseItem}
+                           icon={EIcon.Increase}/>
+            </li>
+            <li className={styles.item} >
+                <ActionBtn text={'Уменьшить'}
+                           onClick={decreaseItem}
+                           icon={EIcon.Decrease}/>
+            </li>
+            <li className={styles.item} >
+                <ActionBtn text={'Редактировать'} icon={EIcon.Edit}/>
+            </li>
+            <li className={styles.item} >
+                <ActionBtn onClick={openModalClick}
+                           text={'Удалить'}
+                           icon={EIcon.Delete}/>
+            </li>
+        </ul>
+
+    </div>
+  ), node);
+}

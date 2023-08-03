@@ -1,0 +1,18 @@
+.btn {
+  width: 100%;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  transition: background-color .3s ease-in-out;
+  &:hover {
+    background-color: var(--gray-secondary);
+  }
+  &:active {
+    background-color: var(--gray-e4);
+  }
+}
+
+.icon {
+  margin-right: 8px;
+}

@@ -1,0 +1,18 @@
+.description {
+  margin-bottom: 25px;
+}
+
+.title {
+  margin-bottom: 3px;
+}
+
+.list {
+  padding-left: 20px;
+  list-style: disc;
+}
+.item {
+  padding-left: 3px;
+  &::marker {
+    color: var(--red-dark);
+  }
+}

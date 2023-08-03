@@ -1,0 +1,23 @@
+.link {
+  display: flex;
+  align-items: center;
+  &:hover {
+    .icon> svg > g path {
+      fill: var(--red-dark);
+    }
+    .text {
+      color: var(--red-dark);
+    }
+  }
+}
+
+.icon {
+  margin-right: 5px;
+  svg > g > path {
+    transition: fill .3s ease-in-out;
+  }
+}
+
+.text {
+  transition: color .3s ease-in-out;
+}
