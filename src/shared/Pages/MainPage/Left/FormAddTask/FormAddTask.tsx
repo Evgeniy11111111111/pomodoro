@@ -31,6 +31,8 @@ export function FormAddTask() {
           pomodoro_count: 1,
           priority: listLength.length,
           time: 25,
+          isEditing: false,
+          pomodoro_current: 1
       }
 
       addItemTask(newItemTask)

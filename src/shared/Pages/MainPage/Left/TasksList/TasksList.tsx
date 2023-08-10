@@ -19,12 +19,14 @@ export function TasksList() {
       {items.length > 0 && (
         <>
           <ul className={listClasses}>
-            {items.map(item => (
-                <TaskItem key={item.id}
-                          pomodoro_count={item.pomodoro_count}
-                          name={item.name}
-                          id={item.id}
-                />
+            {items.slice()
+                  .sort((a, b) => a.priority - b.priority)
+                  .map(item => (
+                    <TaskItem key={item.id}
+                              pomodoro_count={item.pomodoro_count}
+                              name={item.name}
+                              id={item.id}
+                    />
             ))}
           </ul>
           <Text color={EColor.gray} lheight={17} bold={EBold.light} className={styles.totalTime}>{formatedTime}</Text>

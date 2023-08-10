@@ -5,10 +5,8 @@ import classNames from "classnames";
 import {ActionMenuList} from "./ActionMenuList";
 import {useStore} from "effector-react";
 import {$isDropdown, closeDropdown, openDropdown} from "../../../../../../../store/dropdownStore";
-import {Modal} from "../../../../../../Modal";
-import {Text} from "../../../../../../Text";
 interface IActionMenu {
-    id: number
+    id: number;
 }
 
 export function ActionMenu({id}: IActionMenu) {

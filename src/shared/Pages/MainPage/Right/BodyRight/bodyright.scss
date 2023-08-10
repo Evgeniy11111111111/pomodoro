@@ -1,0 +1,57 @@
+.body {
+  width: 100%;
+  background-color: var(--gray-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 452px;
+}
+
+.timerWrap {
+  position: relative;
+}
+
+.btnAdd {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--gray-border);
+  transition: background-color .3s ease-in-out;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(100% + 25px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: var(--green);
+  }
+}
+
+.task {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.greenBtn {
+  background-color: var(--green-light);
+  padding: 19px 50px;
+  margin-right: 25px;
+}
+
+.redBtn {
+  padding: 17px 48px;
+  border: 2px solid var(--red);
+}

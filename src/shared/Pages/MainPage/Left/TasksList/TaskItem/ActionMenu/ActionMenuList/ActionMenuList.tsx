@@ -6,7 +6,12 @@ import ReactDOM from "react-dom";
 import {EIcon} from "../../../../../../../Icon";
 import {ActionBtn} from "../ActionBtn";
 import {openModal} from "../../../../../../../../store/actionMenuListStore";
-import {decreasePomodoroItem, increasePomodoroItem, updateItemTask} from "../../../../../../../../store/listTaskStore";
+import {
+    decreasePomodoroItem,
+    increasePomodoroItem,
+    isTrueEditingTask,
+} from "../../../../../../../../store/listTaskStore";
+import {closeDropdown} from "../../../../../../../../store/dropdownStore";
 
 interface IActionMenuList {
   id: number,
@@ -33,6 +38,12 @@ export function ActionMenuList({buttonRef, onClose, id}: IActionMenuList) {
       decreasePomodoroItem(id)
   }
 
+  function editItem(event: React.MouseEvent<HTMLButtonElement>) {
+      event.stopPropagation()
+      isTrueEditingTask(id)
+      closeDropdown(id)
+  }
+
   return ReactDOM.createPortal((
     <div style={{
             top: dropdownPosition.top,
@@ -53,7 +64,9 @@ export function ActionMenuList({buttonRef, onClose, id}: IActionMenuList) {
                            icon={EIcon.Decrease}/>
             </li>
             <li className={styles.item} >
-                <ActionBtn text={'Редактировать'} icon={EIcon.Edit}/>
+                <ActionBtn text={'Редактировать'}
+                           onClick={editItem}
+                           icon={EIcon.Edit}/>
             </li>
             <li className={styles.item} >
                 <ActionBtn onClick={openModalClick}

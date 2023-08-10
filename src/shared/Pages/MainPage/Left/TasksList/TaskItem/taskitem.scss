@@ -20,6 +20,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .right {
@@ -51,4 +52,14 @@
   display: flex;
   align-items: center;
   height: 25px;
+}
+
+.input {
+  position: absolute;
+  left: 30px;
+  padding: 5px;
+  line-height: 1.0625rem;
+  color: var(--black);
+  font-weight: 300;
+  border: 1px solid var(--black);
 }

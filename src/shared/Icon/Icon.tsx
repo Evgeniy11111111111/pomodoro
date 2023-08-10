@@ -8,6 +8,7 @@ import {DecreaseIcon} from "../Icons/Decrease";
 import {EditIcon} from "../Icons/Edit";
 import {DeleteIcon} from "../Icons/Delete";
 import {CloseIcon} from "../Icons/Close";
+import {PlusIcon} from "../Icons/Plus";
 
 export enum EIcon {
     Pomodoro = 'PomodoroIcon',
@@ -17,7 +18,8 @@ export enum EIcon {
     Decrease = 'Decrease',
     Edit = 'Edit',
     Delete = 'Delete',
-    Close = 'Close'
+    Close = 'Close',
+    Plus = 'Plus'
 }
 
 interface IIconProps {
@@ -51,6 +53,10 @@ export function Icon(props: IIconProps) {
         case EIcon.Close: return (
             <CloseIcon />
         )
+        case EIcon.Plus: return (
+            <PlusIcon />
+        )
+
     }
 }
 
