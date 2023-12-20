@@ -4,13 +4,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "predeploy": "npm run build:dev",
     "deploy": "gh-pages -d build:dev",
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "env NODE_ENV=development CLIENT_ID=ho9Lk4OxPJMT8jZv8sWKHQ node ./bin/dev.js",
-    "test": "jest"
+    "test": "jest",
+    "start": "node ./dist/server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -32,9 +36,7 @@
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.64.1",
     "sass-loader": "^13.2.0",
-    "webpack-node-externals": "^3.0.0"
-  },
-  "devDependencies": {
+    "webpack-node-externals": "^3.0.0",
     "@hot-loader/react-dom": "^17.0.1",
     "@types/classnames": "^2.3.1",
     "@types/enzyme": "^3.10.13",
