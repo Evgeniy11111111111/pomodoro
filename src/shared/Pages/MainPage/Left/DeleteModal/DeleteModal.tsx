@@ -6,21 +6,22 @@ import classNames from "classnames";
 import {EIcon, Icon} from "../../../../Icon";
 import {EBold, EColor, Text} from "../../../../Text";
 import {useStore} from "effector-react";
-import {removeItemTask} from "../../../../../store/listTaskStore";
+import {isFalseAnimatedTask, removeItemTask} from "../../../../../store/listTaskStore";
 
-interface IDeleteModal {
-  onClose?: () => {};
-}
-
-export function DeleteModal({}: IDeleteModal) {
+export function DeleteModal() {
   const currentId = useStore($currentId)
   function onClose() {
     closeModal()
   }
 
   function remove() {
-      removeItemTask(currentId)
-      closeModal()
+      if (currentId) {
+          isFalseAnimatedTask(currentId)
+          setTimeout(() => {
+            removeItemTask(currentId)
+            closeModal()
+          }, 300)
+      }
   }
 
   const ref = useCloseDropdown({onClose})
@@ -40,6 +41,5 @@ export function DeleteModal({}: IDeleteModal) {
           <Text lheight={17} bold={EBold.light}>Отмена</Text>
       </button>
     </div>
-
   );
 }

@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 
 interface IModal {
   children: React.ReactNode;
-  onClose?: () => void;
 }
 export function Modal({children}: IModal) {
   const node = document.querySelector('#modal_root')

@@ -1,0 +1,46 @@
+.bottom {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  background-color: var(--gray-secondary);
+  width: calc((100% / 3) - (32px / 3));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.focus {
+  background-color: var(--orange-light);
+}
+
+.focus .right .svg svg path {
+  stroke: var(--orange);
+}
+
+.stoped {
+  background-color: var(--blue-light);
+}
+
+.stoped .right .svg svg path {
+  stroke: var(--blue);
+}
+
+.pauseTime {
+  background-color: var(--violet-light);
+}
+
+.pauseTime .right .svg svg path {
+  stroke: var(--violet);
+}

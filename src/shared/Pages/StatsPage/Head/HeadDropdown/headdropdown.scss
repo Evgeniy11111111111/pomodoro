@@ -1,0 +1,11 @@
+.dropdown {
+  position: absolute;
+  width: 370px;
+  box-shadow: (0px 10px 63px rgba(0, 0, 0, 0.07));
+}
+.btn {
+  border-top: 1px solid var(--gray);
+  width: 100%;
+  padding: 19px 15px;
+  background-color: var(--gray-secondary);
+}

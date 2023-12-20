@@ -1,17 +1,16 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect} from 'react';
 import styles from './taskitem.scss';
 import classNames from "classnames";
 import {EBold, Text} from "../../../../../Text";
 import {ActionMenu} from "./ActionMenu";
 import {useStore} from "effector-react";
 import {
-    $inputTempTask,
+    $inputTempTask, $isAnimatedTask,
     $isEditingTask,
-    isFalseEditingTask,
+    isFalseEditingTask, isTrueAnimatedTask,
     updateInputTempTask, updateItemNameTask
 } from "../../../../../../store/listTaskStore";
 import {useClickOutsideInput} from "../../../../../hooks/useClickOutsideInput";
-
 
 interface ITaskItem {
     name: string;
@@ -20,10 +19,14 @@ interface ITaskItem {
 }
 
 export function TaskItem({name, pomodoro_count, id}: ITaskItem) {
+  const isAnimated = useStore($isAnimatedTask)[id]
   const isEdit = useStore($isEditingTask)[id]
   const inputValue = useStore($inputTempTask)[id] || name
-  const [show, setShow] = useState(false)
   const ref = useClickOutsideInput({onClose, isEdit})
+
+  useEffect(() => {
+      isTrueAnimatedTask(id)
+  }, [])
 
   function onClose() {
       isFalseEditingTask(id)
@@ -33,10 +36,6 @@ export function TaskItem({name, pomodoro_count, id}: ITaskItem) {
     updateInputTempTask({id, value: event.target.value})
   }
 
-  useEffect(() => {
-      setShow(true)
-  }, [])
-
   function onSubmit(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
         updateItemNameTask({id, newName: inputValue})
@@ -44,9 +43,10 @@ export function TaskItem({name, pomodoro_count, id}: ITaskItem) {
     }
   }
 
-  const liClasses = classNames(styles.item, {[styles.show]: show})
+  const liClasses = classNames(styles.item, {
+      [styles.show]: isAnimated
+  })
   const inputClasses = classNames('input-reset', styles.input)
-
   return (
       <li className={liClasses}>
         <div className={styles.left}>

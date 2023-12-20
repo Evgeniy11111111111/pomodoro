@@ -11,9 +11,30 @@
   --gray-secondary: #F4F4F4;
   --gray-border:    #C4C4C4;
   --gray-e4:        #E4E4E4;
+  --gray-ec:        #ECECEC;
+  --orange-light:   #FFDDA9;
+  --orange:         #FFAE35;
+  --blue-light:     #C5F1FF;
+  --blue:           #7FC2D7;
+  --violet-light:   #DFDCFE;
+  --violet:         #9C97D7;
+
 
   --content-width:   1440px;
   --container-offset:  80px;
 
   --font-family: 'SF UI Display'
+}
+
+html[data-theme="dark"] {
+  --bg-color: var(--black);
+  --text-color: var(--white);
+  --bg-gray-color: var(--gray);
+}
+
+
+html[data-theme="light"] {
+  --bg-color: var(--white);
+  --text-color: var(--black);
+  --bg-gray-color: var(--gray-secondary);
 }

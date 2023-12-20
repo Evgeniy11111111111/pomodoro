@@ -1,5 +1,7 @@
 import {createEvent, createStore} from "effector";
 
+
+// Открытие dropdown
 export const openDropdown = createEvent<number>();
 export const closeDropdown = createEvent<number>()
 

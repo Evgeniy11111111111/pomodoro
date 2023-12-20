@@ -7,7 +7,8 @@ export enum EColor {
   white = 'white',
   red   = 'red',
   gray  = 'gray',
-  grayLight = 'gray-light'
+  grayLight = 'gray-light',
+  totalBlack = 'total-black'
 }
 
 export enum EBold {
@@ -19,7 +20,7 @@ export enum EBold {
 }
 type TSizes = 150 | 64 | 24 | 16 | 12
 
-type THeight = 16 | 17 | 24 | 28 | 33 | 76 | 179
+type THeight = 16 | 17 | 24 | 28 | 33 | 64 | 76 | 179
 interface ITextProps {
   As?: 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div';
   children?: React.ReactNode;

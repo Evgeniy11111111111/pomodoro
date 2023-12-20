@@ -22,8 +22,7 @@ export function TasksList() {
             {items.slice()
                   .sort((a, b) => a.priority - b.priority)
                   .map(item => (
-                    <TaskItem key={item.id}
-                              pomodoro_count={item.pomodoro_count}
+                    <TaskItem key={item.id} pomodoro_count={item.pomodoro_count}
                               name={item.name}
                               id={item.id}
                     />

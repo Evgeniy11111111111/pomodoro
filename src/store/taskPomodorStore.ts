@@ -1,5 +1,7 @@
 import {$listTaskStore, IItemTask} from "./listTaskStore";
-import {createEvent, createStore, sample} from "effector";
+import {createEvent, createStore} from "effector";
+
+// текущая задача
 
 const setTrackedItem = createEvent<IItemTask | null>()
 

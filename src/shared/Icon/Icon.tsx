@@ -9,6 +9,12 @@ import {EditIcon} from "../Icons/Edit";
 import {DeleteIcon} from "../Icons/Delete";
 import {CloseIcon} from "../Icons/Close";
 import {PlusIcon} from "../Icons/Plus";
+import {ArrowRed} from "../Icons/ArrowRed";
+import {StatsPomodoro} from "../Icons/StatsPomodoro";
+import {StatsPomodoroBig} from "../Icons/StatsPomodoroBig";
+import {Focus} from "../Icons/Focus";
+import {StopCount} from "../Icons/StopCount";
+import {TimeInPause} from "../Icons/TimeInPause";
 
 export enum EIcon {
     Pomodoro = 'PomodoroIcon',
@@ -19,7 +25,13 @@ export enum EIcon {
     Edit = 'Edit',
     Delete = 'Delete',
     Close = 'Close',
-    Plus = 'Plus'
+    Plus = 'Plus',
+    ArrowRed = 'ArrowRed',
+    StatsPomodoro = 'StatsPomodoro',
+    StatsPomodoroBig = 'StatsPomodoroBig',
+    Focus = "Focus",
+    StopCount = "StopCount",
+    TimeInPause = "TimeInPause"
 }
 
 interface IIconProps {
@@ -56,7 +68,24 @@ export function Icon(props: IIconProps) {
         case EIcon.Plus: return (
             <PlusIcon />
         )
-
+        case EIcon.ArrowRed: return (
+            <ArrowRed />
+        )
+        case EIcon.StatsPomodoro: return (
+            <StatsPomodoro />
+        )
+        case EIcon.StatsPomodoroBig: return (
+            <StatsPomodoroBig />
+        )
+        case EIcon.Focus: return (
+            <Focus />
+        )
+        case EIcon.StopCount: return (
+            <StopCount />
+        )
+        case EIcon.TimeInPause: return (
+            <TimeInPause />
+        )
     }
 }
 

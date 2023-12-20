@@ -5,6 +5,7 @@ import {EBold, EColor, Text} from "../../../../Text";
 import {useStore} from "effector-react";
 import {$input, updateInput} from "../../../../../store/inputStore";
 import {$listTaskStore, addItemTask} from "../../../../../store/listTaskStore";
+import {$timersTime} from "../../../../../store/timerTimeStore";
 
 const buttonClasses = classNames(
     'btn-reset',
@@ -18,6 +19,7 @@ const inputClasses = classNames(
 export function FormAddTask() {
   const value = useStore($input)
   const listLength = useStore($listTaskStore)
+  const workTime = useStore($timersTime).workTime.time
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
       updateInput(event.target.value)
@@ -30,11 +32,10 @@ export function FormAddTask() {
           name: value,
           pomodoro_count: 1,
           priority: listLength.length,
-          time: 25,
+          time: workTime,
           isEditing: false,
           pomodoro_current: 1
       }
-
       addItemTask(newItemTask)
       updateInput('')
   }

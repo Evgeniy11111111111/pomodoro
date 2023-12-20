@@ -1,0 +1,37 @@
+.day {
+  background-color: var(--gray-secondary);
+  padding: 25px;
+  min-height: 260px;
+  margin-bottom: 32px;
+}
+
+.pomodoro {
+  background-color: var(--gray-secondary);
+  min-height: 179px;
+}
+
+.bottom {
+  background-color: var(--red);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 21px 0 21px;
+}
+
+.pomodoroSvg {
+  margin-right: 15px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

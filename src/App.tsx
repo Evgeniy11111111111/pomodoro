@@ -10,9 +10,11 @@ import {StatsPage} from "./shared/Pages/StatsPage";
 function AppComponent() {
     const [mounted, setMounted] = useState(false)
 
+
     useEffect(() => {
         setMounted(true)
     }, [])
+
 
 
     return (
@@ -22,7 +24,7 @@ function AppComponent() {
                     <Layout>
                         <Header />
                         <Routes>
-                            <Route path="/" element={<MainPage />}/>
+                            <Route path="/" element={<MainPage />} />
                             <Route path="/stats" element={<StatsPage/>}/>
                         </Routes>
                     </Layout>

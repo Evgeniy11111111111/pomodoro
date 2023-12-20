@@ -10,7 +10,6 @@ import {DeleteModal} from "./DeleteModal";
 
 export function Left() {
   const activeModal = useStore($isModalOpen)
-  const id = useStore($currentId)
   return (
     <div className={styles.left}>
       <Description/>
