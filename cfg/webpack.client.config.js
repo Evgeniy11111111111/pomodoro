@@ -26,7 +26,7 @@ module.exports = {
     "webpack-hot-middleware/client?path=//localhost:3001/static/__webpack_hmr",
   ],
   output: {
-    path: path.resolve(__dirname, "../dist/client"),
+    path: path.resolve(__dirname, "../build/client"),
     filename: "client.js",
     publicPath: "//localhost:3001/static",
   },

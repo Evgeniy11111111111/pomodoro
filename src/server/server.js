@@ -6,7 +6,7 @@ import { App } from "../App";
 const PORT = process.env.PORT || 3000
 
 const app = express();
-app.use("/static", express.static("./dist/client"));
+app.use("/static", express.static("./build/client"));
 
 app.get('*', (req, res) => {
     res.send(indexTemplate(ReactDOM.renderToString(App())));
