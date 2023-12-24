@@ -14,7 +14,7 @@
     "build": "env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "env NODE_ENV=development CLIENT_ID=ho9Lk4OxPJMT8jZv8sWKHQ node ./bin/dev.js",
     "test": "jest",
-    "start": "node ./dist/server/server.js"
+    "start": "node ./build/server/server.js"
   },
   "author": "",
   "license": "ISC",
