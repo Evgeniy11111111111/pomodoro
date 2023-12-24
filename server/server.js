@@ -3376,7 +3376,7 @@ var indexTemplate_1 = __webpack_require__(4838);
 var App_1 = __webpack_require__(8957);
 var PORT = process.env.PORT || 3000;
 var app = (0, express_1.default)();
-app.use("/static", express_1.default.static("./dist/client"));
+app.use("/static", express_1.default.static("./build/client"));
 app.get('*', function (req, res) {
     res.send((0, indexTemplate_1.indexTemplate)(server_1.default.renderToString((0, App_1.App)())));
 });
