@@ -3374,8 +3374,17 @@ var express_1 = __importDefault(__webpack_require__(6860));
 var server_1 = __importDefault(__webpack_require__(8684));
 var indexTemplate_1 = __webpack_require__(4838);
 var App_1 = __webpack_require__(8957);
+var compression_1 = __importDefault(__webpack_require__(7455));
+var helmet_1 = __importDefault(__webpack_require__(7806));
 var PORT = process.env.PORT || 3000;
+var IS_DEV = "production" !== "production";
 var app = (0, express_1.default)();
+if (!IS_DEV) {
+    app.use((0, compression_1.default)());
+    app.use((0, helmet_1.default)({
+        contentSecurityPolicy: false
+    }));
+}
 app.use("/static", express_1.default.static("./build/client"));
 app.get('*', function (req, res) {
     res.send((0, indexTemplate_1.indexTemplate)(server_1.default.renderToString((0, App_1.App)())));
@@ -7199,6 +7208,13 @@ module.exports = require("classnames");
 
 /***/ }),
 
+/***/ 7455:
+/***/ ((module) => {
+
+module.exports = require("compression");
+
+/***/ }),
+
 /***/ 2900:
 /***/ ((module) => {
 
@@ -7224,6 +7240,13 @@ module.exports = require("effector-storage/local");
 /***/ ((module) => {
 
 module.exports = require("express");
+
+/***/ }),
+
+/***/ 7806:
+/***/ ((module) => {
+
+module.exports = require("helmet");
 
 /***/ }),
 
