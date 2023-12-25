@@ -3342,8 +3342,8 @@ function AppComponent() {
         react_1.default.createElement(Layout_1.Layout, null,
             react_1.default.createElement(Header_1.Header, null),
             react_1.default.createElement(react_router_dom_1.Routes, null,
-                react_1.default.createElement(react_router_dom_1.Route, { path: "/", element: react_1.default.createElement(MainPage_1.MainPage, null) }),
-                react_1.default.createElement(react_router_dom_1.Route, { path: "/stats", element: react_1.default.createElement(StatsPage_1.StatsPage, null) })))))));
+                react_1.default.createElement(react_router_dom_1.Route, { path: "/pomodoro", element: react_1.default.createElement(MainPage_1.MainPage, null) }),
+                react_1.default.createElement(react_router_dom_1.Route, { path: "/pomodoro/stats", element: react_1.default.createElement(StatsPage_1.StatsPage, null) })))))));
 }
 exports.App = (0, root_1.hot)(function () { return (react_1.default.createElement(AppComponent, null)); });
 
@@ -3439,7 +3439,7 @@ var Icon_1 = __webpack_require__(1083);
 var Text_1 = __webpack_require__(9651);
 var logolink_scss_1 = __importDefault(__webpack_require__(2577));
 function LogoLink() {
-    return (react_1.default.createElement(react_router_dom_1.Link, { className: logolink_scss_1.default.link, to: '/' },
+    return (react_1.default.createElement(react_router_dom_1.Link, { className: logolink_scss_1.default.link, to: '/pomodoro' },
         react_1.default.createElement("span", { className: logolink_scss_1.default.logo },
             react_1.default.createElement(Icon_1.Icon, { name: Icon_1.EIcon.Pomodoro })),
         react_1.default.createElement(Text_1.Text, { className: logolink_scss_1.default.text, size: 24, lheight: 24, color: Text_1.EColor.red }, "pomodoro_box")));
@@ -3488,7 +3488,7 @@ var react_router_dom_1 = __webpack_require__(4661);
 var Icon_1 = __webpack_require__(1083);
 var Text_1 = __webpack_require__(9651);
 function StatsLink() {
-    return (react_1.default.createElement(react_router_dom_1.Link, { className: statslink_scss_1.default.link, to: "/stats" },
+    return (react_1.default.createElement(react_router_dom_1.Link, { className: statslink_scss_1.default.link, to: "/pomodoro/stats" },
         react_1.default.createElement("span", { className: statslink_scss_1.default.icon },
             react_1.default.createElement(Icon_1.Icon, { name: Icon_1.EIcon.Equalizer })),
         react_1.default.createElement(Text_1.Text, { className: statslink_scss_1.default.text, lheight: 17, color: Text_1.EColor.red }, "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0430")));
