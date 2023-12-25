@@ -6,7 +6,7 @@ import {EColor, Text} from "../../Text";
 
 export function StatsLink() {
   return (
-    <Link className={styles.link} to="/stats">
+    <Link className={styles.link} to="/pomodoro/stats">
       <span className={styles.icon}>
         <Icon name={EIcon.Equalizer} />
       </span>

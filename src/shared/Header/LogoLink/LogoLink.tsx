@@ -6,7 +6,7 @@ import styles from "./logolink.scss";
 
 export function LogoLink() {
   return (
-    <Link className={styles.link} to='/'>
+    <Link className={styles.link} to='/pomodoro'>
       <span className={styles.logo}>
         <Icon name={EIcon.Pomodoro}></Icon>
       </span>

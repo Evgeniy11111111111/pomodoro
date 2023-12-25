@@ -37,7 +37,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../build/client"),
     filename: "client.js",
-    publicPath: "//localhost:3001/static",
+    // publicPath: "//localhost:3001/static",
   },
   module: {
     rules: [
@@ -66,6 +66,16 @@ module.exports = {
         test: GLOBAL_CSS_REGEXP,
         use: ['style-loader', 'css-loader']
       },
+      // {
+      //   test: /\.(woff|woff2)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[name].[ext]',
+      //       outputPath: 'fonts/'
+      //     }
+      //   }
+      // }
     ],
   },
   devtool: setupDevtool(),

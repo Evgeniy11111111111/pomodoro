@@ -24,14 +24,13 @@ function AppComponent() {
                     <Layout>
                         <Header />
                         <Routes>
-                            <Route path="/" element={<MainPage />} />
-                            <Route path="/stats" element={<StatsPage/>}/>
+                            <Route path="/pomodoro" element={<MainPage />} />
+                            <Route path="/pomodoro/stats" element={<StatsPage/>}/>
                         </Routes>
                     </Layout>
                 </BrowserRouter>
             )}
         </>
-
     )
 }
 

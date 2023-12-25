@@ -45,6 +45,16 @@ module.exports = {
         test: GLOBAL_CSS_REGEXP,
         use: ['css-loader']
       },
+      // {
+      //   test: /\.(woff|woff2)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[name].[ext]',
+      //       outputPath: 'fonts/'
+      //     }
+      //   }
+      // }
     ],
   },
   optimization: {
